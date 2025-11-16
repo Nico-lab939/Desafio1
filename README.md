@@ -1,16 +1,26 @@
-# React + Vite
+🧠 Arquitectura de Componentes
+La aplicación está diseñada bajo el principio de Component Composition (Composición de Componentes), donde los datos fluyen de manera unidireccional de arriba hacia abajo, desde App.jsx a sus hijos.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Flujo de Datos (Props)
+App.jsx (Contenedor): Define el Array de objetos perros (la fuente de verdad) y utiliza Array.prototype.map() para iterar y renderizar dinámicamente cuatro instancias del componente MyCard.
 
-Currently, two official plugins are available:
+MyCard.jsx (Presentación): Recibe las propiedades de un perro (como image, name, y description) directamente desde App.jsx.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tags.jsx (Reutilizable): Recibe las propiedades de estilo y texto (text y bgColor) desde MyCard.jsx, permitiendo un cambio de color dinámico para cada etiqueta.
+📂 Estructura del Proyecto
 
-## React Compiler
+El proyecto sigue una estructura de componentes clara y modular:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+adopta-un-perrito/
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx       # Muestra el título
+│   │   ├── MyCard.jsx       # Tarjeta de perrito (Elemento de la galería)
+│   │   ├── Tags.jsx         # Etiqueta de raza dinámica
+│   │   └── Footer.jsx       # Pie de página
+│   ├── App.jsx            # Contenedor principal y gestión de datos (Array de perritos)
+│   └── App.css            # Estilos globales y clases de utilidad
+├── public/
+│   └── vite.svg
+├── index.html
+└── package.json
