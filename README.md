@@ -1,4 +1,5 @@
-🧠 Arquitectura de Componentes
+
+🐶 Adopta un Perrito - Galería de Adopción🧠 Arquitectura de Componentes
 La aplicación está diseñada bajo el principio de Component Composition (Composición de Componentes), donde los datos fluyen de manera unidireccional de arriba hacia abajo, desde App.jsx a sus hijos.
 
 Flujo de Datos (Props)
